@@ -31,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
         currentInput += "-";
       } else if (buttonId === "add") {
         currentInput += "+";
-      } else if (buttonId === "sym") {
-        toggleSign();
       } else if (buttonId === ".") {
         currentInput += ".";
       } else if (/[0-9]/.test(buttonId)) {
@@ -50,17 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       updateDisplay("Error");
       currentInput = "";
-    }
-  }
-
-  function toggleSign() {
-    if (currentInput) {
-      if (currentInput.startsWith("-")) {
-        currentInput = currentInput.slice(1);
-      } else {
-        currentInput = "-" + currentInput;
-      }
-      updateDisplay(currentInput);
     }
   }
 });
